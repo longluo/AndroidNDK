@@ -229,6 +229,7 @@ void *UpdateTicks(void *context) {
     sendJavaMsg(env, pctx->jniHelperObj, statusId,
                 "TickerThread status: ticking stopped");
     (*javaVM)->DetachCurrentThread(javaVM);
+
     return context;
 }
 

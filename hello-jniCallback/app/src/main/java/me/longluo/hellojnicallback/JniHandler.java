@@ -6,6 +6,7 @@ import androidx.annotation.Keep;
 
 import android.util.Log;
 
+
 /*
  * A helper class to demo that JNI could call into:
  *     private non-static function

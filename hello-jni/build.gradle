@@ -10,12 +10,13 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/grails-core/' }
         maven { url 'https://maven.aliyun.com/repository/apache-snapshots/' }
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+
         google()
-        jcenter()
+        mavenCentral()
     }
 
     ext {
-        kotlin_version = '1.7.20'
+        kotlin_version = '1.8.0'
     }
 
     dependencies {
@@ -37,8 +38,9 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/grails-core/' }
         maven { url 'https://maven.aliyun.com/repository/apache-snapshots/' }
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
