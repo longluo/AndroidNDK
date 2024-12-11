@@ -19,7 +19,9 @@ public class HelloJniActivity extends AppCompatActivity {
         System.loadLibrary("hello-jni");
     }
 
-    private TextView mTvHello;
+    private TextView mTvJniHello;
+
+    private TextView mTvJniResult;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,8 +32,11 @@ public class HelloJniActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mTvHello = findViewById(R.id.hello_textview);
-        mTvHello.setText(stringFromJNI());
+        mTvJniHello = findViewById(R.id.tv_hello_jni);
+        mTvJniHello.setText(stringFromJNI());
+
+        mTvJniResult = findViewById(R.id.tv_jni_result);
+        mTvJniResult.setText(String.valueOf(add(7, 9)));
     }
 
     /*
@@ -41,17 +46,6 @@ public class HelloJniActivity extends AppCompatActivity {
      */
     public native String stringFromJNI();
 
-    /*
-     * This is another native method declaration that is *not*
-     * implemented by 'hello-jni'. This is simply to show that
-     * you can declare as many native methods in your Java code
-     * as you want, their implementation is searched in the
-     * currently loaded native libraries only the first time
-     * you call them.
-     *
-     * Trying to call this function will result in a
-     * java.lang.UnsatisfiedLinkError exception !
-     */
-//    external fun unimplementedStringFromJNI(): String?
+    public native int add(int a, int b);
 
 }

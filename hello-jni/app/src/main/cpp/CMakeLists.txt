@@ -9,3 +9,5 @@ add_library(hello-jni SHARED
 target_link_libraries(hello-jni
         android
         log)
+
+
